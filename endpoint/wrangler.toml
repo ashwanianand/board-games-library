@@ -1,0 +1,26 @@
+# Cloudflare Workers configuration for the play-logging endpoint.
+# Deploy with: wrangler deploy
+#
+# Prerequisites:
+#   1. npm install -g wrangler
+#   2. wrangler login
+#   3. Create a KV namespace (see README for the command)
+#   4. Replace the placeholder kv_namespaces id below with your real namespace ID
+
+name = "board-games-worker"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+
+[vars]
+# Origins allowed to call this worker (comma-separated for multiple).
+# Set this to your GitHub Pages URL to prevent other sites logging plays.
+# Use "*" to allow any origin (less secure but fine for personal use).
+ALLOWED_ORIGIN = "https://ashwanianand.github.io"
+
+[[kv_namespaces]]
+binding = "STATS"
+# Replace with your actual KV namespace ID after running:
+#   wrangler kv namespace create STATS
+id = "3267c8a11ce64cf7afdcae8a9dee055c"
+# For local dev with `wrangler dev`, you can also set:
+# preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
