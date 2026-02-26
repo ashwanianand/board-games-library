@@ -341,13 +341,6 @@ ${siteHeader(game.title)}
           <span class="stats-panel__key">Last played</span>
           <span class="stats-panel__value" id="stat-last-played">${esc(fmt(stats.lastPlayed))}</span>
         </div>
-        <button class="log-play-btn" id="log-play-btn" aria-label="Log a play of ${esc(game.title)}">
-          🎲 Log a play
-        </button>
-        <p class="text-muted mt-1" style="font-size:0.78rem;">
-          Or tap an NFC tag encoded to<br>
-          <code>${esc(gameUrl)}?played=1</code>
-        </p>
       </aside>
     </div>
 

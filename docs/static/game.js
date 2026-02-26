@@ -32,7 +32,6 @@
   /* ── DOM refs ──────────────────────────────────────────────────── */
   const statPlayCount  = document.getElementById("stat-play-count");
   const statLastPlayed = document.getElementById("stat-last-played");
-  const logPlayBtn     = document.getElementById("log-play-btn");
 
   /* ── Toast notification ────────────────────────────────────────── */
   let toastEl = null;
@@ -123,11 +122,6 @@
       return;
     }
 
-    if (logPlayBtn) {
-      logPlayBtn.disabled = true;
-      logPlayBtn.textContent = "Logging…";
-    }
-
     try {
       const res = await fetch(`${STATS_ENDPOINT}/play/${SLUG}`, {
         method: "POST",
@@ -151,12 +145,7 @@
     } catch (err) {
       console.warn("logPlay failed:", err.message);
       showToast("⚠️ Could not log play — check your connection.", "error");
-    } finally {
-      if (logPlayBtn) {
-        logPlayBtn.disabled = false;
-        logPlayBtn.textContent = "Log a play";
-      }
-    }
+    } finally {}
   }
 
   /* ── NFC / ?played=1 handler ────────────────────────────────────── */
@@ -181,11 +170,6 @@
     logPlay({ fromNfc: true }).then(() => {
       if (banner) banner.textContent = "📲 Play logged via NFC!";
     });
-  }
-
-  /* ── Manual log button ─────────────────────────────────────────── */
-  if (logPlayBtn) {
-    logPlayBtn.addEventListener("click", () => logPlay({ fromNfc: false }));
   }
 
   /* ── Init ──────────────────────────────────────────────────────── */
