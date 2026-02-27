@@ -7,10 +7,13 @@
  *     - Automatically log a play once on page load.
  *     - Remove the param from the URL without a page reload.
  *     - Show a confirmation banner.
- *  3. Provide the manual "Log a play" button.
- *  4. Debounce protection: store the last-logged timestamp in
- *     sessionStorage so a page refresh within the session doesn't
- *     double-count.
+ *
+ * Play-logging protection lives on the SERVER (Cloudflare Worker):
+ *  - A global per-game cooldown (default 6 hours) ensures that only one
+ *    play is counted per game per window — regardless of how many people
+ *    tap the NFC tag to browse rules/links.
+ *  - Client only guards against double-POST within the same page load
+ *    (in-memory flag — no sessionStorage needed).
  *
  * The build script injects:
  *   window.GAME_SLUG      — slug of the current game, e.g. "settlers-of-catan"
@@ -25,9 +28,9 @@
   const STATS_ENDPOINT = (window.STATS_ENDPOINT || "").trim();
   const INITIAL_STATS  = window.INITIAL_STATS || { playCount: 0, lastPlayed: null };
 
-  // Debounce window: don't log more than once per 30 minutes per session.
-  const DEBOUNCE_MS = 30 * 60 * 1000;
-  const SESSION_KEY = `last_logged_${SLUG}`;
+  // In-memory flag: prevents double-POST if somehow called twice on the same
+  // page load. The real cooldown enforcement is on the server.
+  let postedThisLoad = false;
 
   /* ── DOM refs ──────────────────────────────────────────────────── */
   const statPlayCount  = document.getElementById("stat-play-count");
@@ -90,24 +93,6 @@
     }
   }
 
-  /* ── Debounce guard ────────────────────────────────────────────── */
-  function wasRecentlyLogged() {
-    try {
-      const lastLogged = parseInt(sessionStorage.getItem(SESSION_KEY) || "0", 10);
-      return Date.now() - lastLogged < DEBOUNCE_MS;
-    } catch {
-      return false;
-    }
-  }
-
-  function markLogged() {
-    try {
-      sessionStorage.setItem(SESSION_KEY, String(Date.now()));
-    } catch {
-      // Storage unavailable — ignore.
-    }
-  }
-
   /* ── Log a play ────────────────────────────────────────────────── */
   async function logPlay({ fromNfc = false } = {}) {
     if (!SLUG) return;
@@ -117,10 +102,8 @@
       return;
     }
 
-    if (wasRecentlyLogged()) {
-      showToast("⏱ Play already logged for this session.", "info");
-      return;
-    }
+    if (postedThisLoad) return; // prevent double-POST on same page load
+    postedThisLoad = true;
 
     try {
       const res = await fetch(`${STATS_ENDPOINT}/play/${SLUG}`, {
@@ -136,7 +119,6 @@
 
       const stats = await res.json();
       updateStatsDisplay(stats);
-      markLogged();
 
       const msg = fromNfc
         ? `📲 NFC tap recorded! Plays: ${stats.playCount}`
@@ -145,6 +127,7 @@
     } catch (err) {
       console.warn("logPlay failed:", err.message);
       showToast("⚠️ Could not log play — check your connection.", "error");
+      postedThisLoad = false; // allow retry on network failure
     } finally {}
   }
 

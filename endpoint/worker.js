@@ -22,7 +22,13 @@
  *   or "*" for open access.
  */
 
-const DEBOUNCE_TTL_SECS = 30 * 60; // 30 minutes
+// Global per-game cooldown: after a play is logged, no further logs are
+// counted for this many seconds — regardless of who taps the NFC tag.
+// This means friends tapping to browse rules/links won't inflate the count.
+// Default: 6 hours. Override via the COOLDOWN_HOURS env var in wrangler.toml.
+const DEFAULT_COOLDOWN_HOURS = 6;
+const cooldownSecs = (env) =>
+  parseInt(env.COOLDOWN_HOURS || DEFAULT_COOLDOWN_HOURS, 10) * 60 * 60;
 const SLUG_RE = /^[a-z0-9-]{1,80}$/;
 
 /* ── CORS helpers ─────────────────────────────────────────────────── */
@@ -115,24 +121,25 @@ async function handlePostPlay(slug, request, env, cors) {
     return jsonResponse({ error: "Invalid slug" }, 400, cors);
   }
 
-  // Debounce: use client IP + slug as dedup key
-  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-  const debounceKey = `debounce:${ip}:${slug}`;
-  const alreadyLogged = await env.STATS.get(debounceKey, "text");
+  // Global per-game cooldown: one play log per game per cooldown window,
+  // regardless of who triggers it. Friends tapping the same NFC tag to
+  // browse rules/links within the cooldown window won't increment the count.
+  const cooldownKey = `cooldown:${slug}`;
+  const inCooldown  = await env.STATS.get(cooldownKey, "text");
 
   const stats = await getStats(env.STATS, slug);
 
-  if (!alreadyLogged) {
-    // First log within the window — increment
-    stats.playCount = (stats.playCount || 0) + 1;
+  if (!inCooldown) {
+    // Outside cooldown window — count this as a new play
+    stats.playCount  = (stats.playCount || 0) + 1;
     stats.lastPlayed = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
     await saveStats(env.STATS, slug, stats);
     await registerSlug(env.STATS, slug);
-    // Mark debounce key with TTL
-    await env.STATS.put(debounceKey, "1", { expirationTtl: DEBOUNCE_TTL_SECS });
+    // Start the cooldown clock for this game
+    await env.STATS.put(cooldownKey, "1", { expirationTtl: cooldownSecs(env) });
   }
-  // If already logged: return current stats without incrementing (idempotent)
+  // If inside cooldown: return current stats unchanged (idempotent)
 
   return jsonResponse(stats, 200, cors);
 }
