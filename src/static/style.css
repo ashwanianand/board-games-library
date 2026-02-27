@@ -5,20 +5,20 @@
 
 /* ── Design tokens ─────────────────────────────────────────────────── */
 :root {
-  --color-bg: #f8f5f0;
+  --color-bg: #f5f7fa;
   --color-surface: #ffffff;
-  --color-surface-alt: #f1ece4;
-  --color-border: #d9d0c4;
-  --color-primary: #8b4513;     /* saddle-brown — warm board-game feel */
-  --color-primary-dark: #6a340e;
-  --color-accent: #d4a017;      /* golden amber */
-  --color-accent-dark: #a87c10;
-  --color-text: #2c2016;
-  --color-text-muted: #6b5a47;
-  --color-tag-bg: #ede5d8;
-  --color-tag-text: #5c3d1e;
+  --color-surface-alt: #eef1f6;
+  --color-border: #cdd5e0;
+  --color-primary: #3d5a8a;     /* muted navy-blue — calm, easy on eyes */
+  --color-primary-dark: #2a3f64;
+  --color-accent: #5a9470;      /* soft sage-green */
+  --color-accent-dark: #437257;
+  --color-text: #1e2c3d;
+  --color-text-muted: #5a6e84;
+  --color-tag-bg: #e2eaf5;
+  --color-tag-text: #2a3f64;
   --color-success: #2e7d32;
-  --color-error: #c62828;
+  --color-error: #b71c1c;
   --color-info: #1565c0;
 
   --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -39,18 +39,18 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #1a1510;
-    --color-surface: #252018;
-    --color-surface-alt: #2e2820;
-    --color-border: #3e3428;
-    --color-primary: #d4834a;
-    --color-primary-dark: #f0a070;
-    --color-accent: #e6b820;
-    --color-accent-dark: #f0cc55;
-    --color-text: #f0e8dc;
-    --color-text-muted: #b09a84;
-    --color-tag-bg: #3a2e22;
-    --color-tag-text: #d4a878;
+    --color-bg: #13191f;
+    --color-surface: #1b2430;
+    --color-surface-alt: #222d3a;
+    --color-border: #2c3a4a;
+    --color-primary: #7da6d9;
+    --color-primary-dark: #96bae6;
+    --color-accent: #6db88a;
+    --color-accent-dark: #86cca2;
+    --color-text: #dce8f7;
+    --color-text-muted: #8099b3;
+    --color-tag-bg: #222d3a;
+    --color-tag-text: #93b8e2;
     --color-success: #66bb6a;
     --color-error: #ef5350;
     --color-info: #64b5f6;
@@ -59,6 +59,9 @@
 
 /* ── Reset ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Ensure [hidden] is always respected, even when CSS sets display */
+[hidden] { display: none !important; }
 
 html { scroll-behavior: smooth; }
 
@@ -90,10 +93,10 @@ a:focus-visible {
 
 /* ── Site header ───────────────────────────────────────────────────── */
 .site-header {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  background: var(--color-surface);
+  padding: 0.85rem 0;
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 
 .site-header .container {
@@ -109,15 +112,15 @@ a:focus-visible {
   font-size: clamp(1.2rem, 3vw, 1.7rem);
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
+  color: var(--color-primary);
   letter-spacing: 0.02em;
 }
 
-.site-title:hover { color: var(--color-accent); }
+.site-title:hover { color: var(--color-primary-dark); }
 
 .header-meta {
   font-size: 0.85rem;
-  opacity: 0.85;
+  color: var(--color-text-muted);
 }
 
 /* ── Site footer ───────────────────────────────────────────────────── */
@@ -579,12 +582,14 @@ a:focus-visible {
 .prose a:hover img { opacity: 0.85; }
 
 /* ── NFC / auto-play banner ────────────────────────────────────────── */
+/* Note: [hidden] { display: none !important } in the reset above ensures
+   this is invisible until game.js removes the hidden attribute. */
 .nfc-banner {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   background: var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-surface);
   border-radius: var(--radius-md);
   padding: 0.75rem 1.25rem;
   margin-bottom: 1.5rem;
