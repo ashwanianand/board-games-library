@@ -245,13 +245,20 @@ function buildGamePage(game, allStats) {
   const gameUrl       = `${config.basePath}/games/${game.slug}/`;
   const assetsPath    = game.assetsPath || `game_files/${game.slug}/`;
 
+  // Resolve a link URL: relative paths are resolved against assetsPath
+  const resolveUrl = (url) => {
+    if (/^https?:\/\/|^\/\//.test(url)) return url;
+    const base = `${config.basePath}/${assetsPath}`.replace(/([^/])\/+$/, "$1/");
+    return base + url;
+  };
+
   // Links section
   const linksHtml = game.links && Object.keys(game.links).length > 0
     ? `<section class="mt-2" aria-label="External links">
     <h2 class="section-heading">Links</h2>
     <div class="links-section">
       ${Object.entries(game.links).map(([label, url]) =>
-          `<a class="link-btn" href="${esc(url)}" target="_blank" rel="noopener noreferrer">
+          `<a class="link-btn" href="${esc(resolveUrl(url))}" target="_blank" rel="noopener noreferrer">
           ${esc(label.charAt(0).toUpperCase() + label.slice(1))} ↗
         </a>`).join("\n      ")}
     </div>
@@ -317,17 +324,6 @@ ${siteHeader(game.title)}
         <div class="game-card__tags" aria-label="Tags">${tagsHtml}</div>
 
         ${linksHtml}
-
-        <!-- Files note -->
-        ${assetsPath ? `
-        <section class="mt-2" aria-label="Local files">
-          <h2 class="section-heading">Files</h2>
-          <p class="text-muted">
-            Store PDFs, images, and player aids in
-            <code>${esc(assetsPath)}</code> and
-            link to them from the game's Markdown file.
-          </p>
-        </section>` : ""}
       </div>
 
       <!-- Stats panel -->
