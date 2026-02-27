@@ -146,15 +146,14 @@ a:focus-visible {
 }
 
 .search-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 0.6rem;
   align-items: center;
 }
 
 .search-input-wrapper {
   position: relative;
-  flex: 1 1 220px;
 }
 
 .search-icon {
@@ -224,7 +223,7 @@ a:focus-visible {
 .search-results-count {
   font-size: 0.85rem;
   color: var(--color-text-muted);
-  flex-basis: 100%;
+  grid-column: 1 / -1;
 }
 
 /* ── Game grid (home page) ─────────────────────────────────────────── */
@@ -381,8 +380,9 @@ a:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
-  min-width: 220px;
-  flex: 0 1 260px;
+  flex: 0 0 auto;          /* size to content, don't grow/shrink */
+  min-width: fit-content;  /* always wide enough for key + value */
+  align-self: flex-start;  /* don't stretch to game-header height */
   box-shadow: var(--shadow-card);
 }
 
@@ -399,6 +399,7 @@ a:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;  /* guarantee breathing room between label and value */
   padding: 0.45rem 0;
   border-bottom: 1px solid var(--color-border);
   font-size: 0.9rem;
@@ -620,9 +621,19 @@ a:focus-visible {
 /* ── Responsive tweaks ─────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .game-header { flex-direction: column; }
-  .stats-panel { flex: 1 1 auto; min-width: 0; }
+  /* On mobile the stats panel goes full-width below game info */
+  .stats-panel { flex: 1 1 auto; min-width: 0; width: 100%; }
   .games-grid { grid-template-columns: 1fr; }
-  .search-controls { flex-direction: column; align-items: stretch; }
+  /* Search: search bar spans full width, 3 selects share the next row */
+  .search-controls {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .search-input-wrapper {
+    grid-column: 1 / -1;
+  }
+  .search-results-count {
+    grid-column: 1 / -1;
+  }
   .filter-select, .sort-select { width: 100%; }
 }
 
