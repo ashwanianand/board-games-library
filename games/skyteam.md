@@ -220,4 +220,5 @@ You immediately lose the game if:
 
 ## Useful Files
 
-- [Additional Airports](additional-airports.pdf) — Additional airports, thanks to [Taladril on BGG](https://boardgamegeek.com/filepage/315794/34-custom-airports-17-dual-side-cards-printable-at)
+- [Holistic summary](holistic-summary.pdf) — Integrates all the "advanced" module rules, as well as the Turbulence rules into the base-game rules on a single sheet of paper. Thanks to [zefquaavius on BGG](https://boardgamegeek.com/filepage/291891/sky-team-holistic-summary)
+- [Additional Airports](additional-airports.pdf) — additional airports, thanks to [Taladril on BGG](https://boardgamegeek.com/filepage/315794/34-custom-airports-17-dual-side-cards-printable-at)
