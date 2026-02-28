@@ -9,14 +9,15 @@ playtime:
   max: 80
 weight: 2.8
 tags:
-  - worker placement
+  - strategy
   - card drafting
-  - engine building
+  - family
   - fantasy
 links:
   bgg: "https://boardgamegeek.com/boardgame/199792/everdell"
-  rules: "https://www.starling.games/everdell-rules"
-  tutorial: "https://www.youtube.com/watch?v=yo3CrnB9MLA"
+  rules: "rules-en.pdf"
+  tutorial: "https://www.youtube.com/watch?v=1b9zQz7COxs"
+  cards-effect-de-en: "https://ashwanianand.github.io/everdell/"
 assetsPath: "game_files/everdell/"
 ---
 
@@ -45,9 +46,4 @@ Everdell is a worker placement and card-drafting game set in a charming woodland
 
 ## Files
 
-- [Card Reference](game_files/everdell/card-reference.pdf) — all card types and their effects
-- [Season Reference](game_files/everdell/season-reference.pdf) — what you gain at each season transition
-
-## Video Tutorial
-
-[![Everdell Tutorial](https://img.youtube.com/vi/yo3CrnB9MLA/0.jpg)](https://www.youtube.com/watch?v=yo3CrnB9MLA)
+- [Quick Reference](quick-reference.pdf) — printable player aid
