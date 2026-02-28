@@ -15,8 +15,8 @@ tags:
   - simultaneous play
 links:
   bgg: "https://boardgamegeek.com/boardgame/68448/7-wonders"
-  rules: "https://www.rprod.com/storage/app/media/Rules/7Wonders_Rules_US_Web.pdf"
-  tutorial: "https://www.youtube.com/watch?v=AoeNVxQ85q0"
+  rules: "rules-en.pdf"
+  tutorial: "https://www.youtube.com/watch?v=XnBLz61FJYw"
 assetsPath: "game_files/7-wonders/"
 ---
 
@@ -24,28 +24,47 @@ assetsPath: "game_files/7-wonders/"
 
 7 Wonders is a card-drafting civilisation game played over three Ages. Each player leads an ancient city and builds it by drafting cards representing structures, guilds, and wonders. Cards generate resources, victory points, science symbols, military strength, and commerce. All players act simultaneously — pick a card, pass the hand, repeat. The civilisation with the most victory points after three Ages wins.
 
-## Teaching Tips
+## Start
+- Remove cards depending on #players.
+- Use only (#players + 2) Guilds. Random and secret.
+- Randomly assign wonders and side. (Side A if learning)
+- $3
 
-- The simultaneous card selection makes the game fast regardless of player count — highlight this to players nervous about downtime.
-- Science scoring (set collection that scales quadratically) is opaque at first — walk through an example before the game.
-- Military is blind until the end of each Age — players often neglect shields and are surprised by the penalties.
-- Wonders can be powerful end-game scoring engines; explain that burying a card under a wonder stage is always an option.
+## Structure 
+3 Ages, at the start of which receive 7 cards, then
+followed by 6 turns.
 
-## House Rules
+## Turn 
+1. Choose 1 card.
+2. Action (simultaneous), pick 1 of these:
+    #### a. Build card
+        - Top left is cost. If own prerequisite building, build for free.
+        - Lower right is free building after this one.
+        - To build, must either produce required resources or buy from neighbours.
+        - If buying, $2 per resource. May not use money earned in current round. Neighbour may not refuse, also does not lose resource. Resources only bought for 1 turn.
+        - No duplicates
+        - Brown & grey cards tucked under upper left of board.
+    #### b. Build 1 stage of wonder
+        - Pay cost. Tuck card face-down under current stage.
+    #### c. Discard card for $3
+3. Pass cards. Clockwise in Ages I & III, Anticlockwise in Age II.
 
-- **No military**: Remove the red cards and military scoring for a more purely economic and scientific experience — good for introducing new players.
-- **Score reveal during play**: Optionally track points openly to help new players understand which strategies are working.
+## End of Age
+- Compare military strength with neighbours. Get -1VP token if weaker, +1/3/5VP token for Age I/II/III if stronger, none if tied.
 
-## Setup Notes
+## End
+- 1VP per $3
+- VP’s for wonders and buildings
+- Science symbols: for each type – (#symbols)2 VP, for each set of 3 different symbols – 7VP.
+- Tiebreaker is money.
 
-- Each player takes a Wonder board (random or draft) and its corresponding starting resource.
-- Shuffle each Age deck separately; deal 7 cards per player from Age I to start.
-- On each turn: choose one card, then simultaneously reveal. Play it, bury it for a wonder stage, or discard for 3 coins.
-- Pass hands clockwise in Ages I and III, counter-clockwise in Age II.
-- After Age III, resolve final military and count all victory points.
+## Others
+- Wonder stages do not correspond to Ages.
+- For 2P expert variant, see rules.
 
-## Files
+Tips:
+- No more Raw Materials or Manufactured Goods cards in Age III.
 
-- [Scoring Reference](game_files/7-wonders/scoring-reference.pdf) — all scoring categories and formulas
-- [Wonder Boards Overview](game_files/7-wonders/wonder-boards.pdf) — summary of all 7 wonder boards and their stages
-- [Age Card Breakdown](game_files/7-wonders/age-cards.pdf) — card types and counts per Age
+## Additional Files
+
+- [Cheatsheet and score sheet](cheatsheet.pdf) — quick instruction per round and victory points 
