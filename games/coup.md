@@ -15,7 +15,7 @@ tags:
   - hidden roles
 links:
   bgg: "https://boardgamegeek.com/boardgame/131357/coup"
-  rules: "https://www.indieboardsandcards.com/docs/Coup_Rules.pdf"
+  rules: "rules-en.pdf"
   tutorial: "https://www.youtube.com/watch?v=a8bY3zI9FL4"
 assetsPath: "game_files/coup/"
 ---
@@ -24,17 +24,6 @@ assetsPath: "game_files/coup/"
 
 Coup is a fast-paced bluffing game set in a dystopian future. Each player holds two secret role cards representing members of the government. On your turn you take an action — many of which require claiming a specific role. Other players can challenge your claim, forcing you to prove it or lose an influence. Lose both of your influence cards and you're eliminated. Last player with influence wins.
 
-## Teaching Tips
-
-- Teach the seven actions first before explaining roles — players grasp the action economy faster that way.
-- Emphasise that bluffing is always legal: you can claim any role at any time, whether or not you hold it.
-- The Contessa counter (block assassination) is easy to forget — remind new players that they can block before they reflexively lose an influence.
-- 3–4 player games are tighter and punishier; 6-player games are more chaotic and forgiving of early mistakes.
-
-## House Rules
-
-- **No coup on Turn 1**: Some groups forbid spending 7 coins to Coup on the very first round to give the game time to develop.
-- **Reveal on challenge**: When a challenge is won, the challenged player may shuffle the proved card back and draw a new one — a small hidden-information refresh.
 
 ## Setup Notes
 
@@ -43,7 +32,31 @@ Coup is a fast-paced bluffing game set in a dystopian future. Each player holds 
 - The character reference cards list all actions and blocks — place them in the centre of the table.
 - When a player loses an influence they flip one of their cards face-up; that role ability is no longer available to them.
 
+## The "Reformation" Expansion
+
+This expansion adds a layer of team mechanics and a new character.
+### 1. Allegiances (The Factions)
+
+Players are divided into Catharists or Reformists.
+
+- Restrictions: You cannot Assassinate, Steal from, or Coup a player of your own faction unless everyone at the table belongs to the same faction.
+
+- Changing Factions: You can spend 1 coin (to the Treasury) to change your own faction, or 2 coins to change someone else's.
+
+### 2. The Treasury (The Almshouse)
+Coins used to change factions go into a central "Almshouse" pile.
+
+- New Action: A player who does not have the Duke can claim they don't have one to take all the coins in the Almshouse. This can be challenged just like any other character claim.
+
+### 3. The Inquisitor (Alternative to Ambassador)
+
+You can replace the Ambassador with the Inquisitor.
+
+- Action: Exchange 1 card with the deck OR look at one of an opponent's cards and force them to exchange it if you wish.
+
+- Counteraction: Blocks Stealing.
+
 ## Files
 
-- [Character Reference](game_files/coup/character-reference.pdf) — all roles, actions, and blocks at a glance
-- [Quick-Start Rules](game_files/coup/quick-start.pdf) — condensed one-page rules
+- [Character Reference](character-reference.png) — all roles, actions, and blocks at a glance
+- [Quick-Start Rules](quick-start.pdf) — condensed one-page rules
