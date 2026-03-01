@@ -1,23 +1,23 @@
 ---
 title: "One Night Ultimate Werewolf"
-slug: "one-night-werewolf"
+slug: "one-night-ultimate-werewolf"
 players:
   min: 3
   max: 10
 playtime:
   min: 10
-  max: 15
-weight: 1.3
+  max: 10
+weight: 1.4
 tags:
   - social deduction
   - party
   - bluffing
   - hidden roles
 links:
-  bgg: "https://boardgamegeek.com/boardgame/147949/one-night-ultimate-werewolf"
-  rules: "https://www.beziergames.com/products/one-night-ultimate-werewolf"
-  tutorial: "https://www.youtube.com/watch?v=NrLN71sYMJI"
-assetsPath: "game_files/one-night-werewolf/"
+  bgg: "https://boardgamegeek.com/boardgame/147734/one-night-ultimate-werewolf"
+  rules: "https://beziergames.com/products/one-night-ultimate-werewolf"
+  tutorial: "https://www.youtube.com/watch?v=CI8P-ErLCOs"
+assetsPath: "game_files/one-night-ultimate-werewolf/"
 ---
 
 ## Overview

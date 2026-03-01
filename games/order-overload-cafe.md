@@ -1,22 +1,23 @@
 ---
-title: "Order Overload"
-slug: "order-overload"
+title: "Order Overload: Cafe"
+slug: "order-overload-cafe"
 players:
   min: 2
   max: 6
 playtime:
   min: 20
-  max: 40
-weight: 1.5
+  max: 20
+weight: 1.1
 tags:
-  - party
-  - real-time
   - memory
+  - cooperative
+  - party
+  - cards
 links:
-  bgg: "https://boardgamegeek.com/boardgame/order-overload"
-  rules: ""
-  tutorial: ""
-assetsPath: "game_files/order-overload/"
+  bgg: "https://boardgamegeek.com/boardgame/361214/order-overload-cafe"
+  rules: "https://oinkgames.com/en/games/analog/order-overload-cafe/"
+  tutorial: "https://www.youtube.com/watch?v=Aq2XEmLOBNU"
+assetsPath: "game_files/order-overload-cafe/"
 ---
 
 ## Overview
