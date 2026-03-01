@@ -125,6 +125,7 @@ function htmlShell({ title, headExtra = "", bodyClass = "", body, scripts = [] }
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${pageTitle}</title>
   <meta name="robots" content="noindex, nofollow, noarchive" />
+  <link rel="icon" href="${config.basePath}/static/icon.png" />
   <link rel="stylesheet" href="${config.basePath}/static/style.css" />
   ${headExtra}
 </head>
