@@ -15,8 +15,8 @@ tags:
   - bluffing
 links:
   bgg: "https://boardgamegeek.com/boardgame/128882/the-resistance-avalon"
-  rules: "https://www.indieboardsandcards.com/docs/Avalon_Rules.pdf"
-  tutorial: "https://www.youtube.com/watch?v=8R_d-1FKzbs"
+  rules: "rules-en.pdf"
+  tutorial: "https://www.youtube.com/watch?v=rXlK3NZjLGc"
 assetsPath: "game_files/avalon/"
 ---
 
@@ -42,12 +42,3 @@ The Resistance: Avalon is a social deduction game of hidden roles set in Arthuri
 - Merlin opens eyes during a separate phase to see the Evil players — Evil players do not know who Merlin is.
 - Mission sizes (team sizes and fail requirements) are listed on the reference card by player count.
 - After five missions or when one side reaches three wins, the game ends.
-
-## Files
-
-- [Mission Reference Card](game_files/avalon/mission-reference.pdf) — team sizes and fail requirements by player count
-- [Role Summary](game_files/avalon/role-summary.pdf) — all special roles and their powers
-
-## Video Tutorial
-
-[![Avalon Tutorial](https://img.youtube.com/vi/8R_d-1FKzbs/0.jpg)](https://www.youtube.com/watch?v=8R_d-1FKzbs)

@@ -15,8 +15,9 @@ tags:
   - family
 links:
   bgg: "https://boardgamegeek.com/boardgame/265613/bad-bones"
-  rules: "https://iello.fr/wp-content/uploads/2019/09/BadBones_Rules_EN_web.pdf"
-  tutorial: "https://www.youtube.com/watch?v=KnHfnBXVmos"
+  basic rules: "rules-en-A.pdf"
+  advance rules: "rules-en-B.pdf"
+  tutorial: "https://www.youtube.com/watch?v=wIUR_CVbWEM"
 assetsPath: "game_files/bad-bones/"
 ---
 
@@ -42,11 +43,7 @@ Bad Bones is a fast-playing competitive tower-defense dice game. Skeletons are a
 - At the start of each round, draw and reveal dungeon cards to determine how many skeletons appear and from which direction.
 - Skeletons added to the board move each round until they hit a trap or destroy a building.
 
-## Files
-
-- [Village Board Overview](game_files/bad-bones/village-board.pdf) — trap placement zones and building positions
-- [Quick Rules Reference](game_files/bad-bones/quick-rules.pdf) — one-page round summary
-
 ## Video Tutorial
 
-[![Bad Bones Tutorial](https://img.youtube.com/vi/KnHfnBXVmos/0.jpg)](https://www.youtube.com/watch?v=KnHfnBXVmos)
+- [![Bad Bones Basic Rules](https://www.youtube.com/watch?v=wIUR_CVbWEM/0.jpg)](https://www.youtube.com/watch?v=wIUR_CVbWEM)
+- [![Bad Bones Advance Rules](https://www.youtube.com/watch?v=A5Id3x7Kmq4/0.jpg)](https://www.youtube.com/watch?v=A5Id3x7Kmq4)

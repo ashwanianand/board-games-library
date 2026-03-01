@@ -15,7 +15,7 @@ tags:
   - family
 links:
   bgg: "https://boardgamegeek.com/boardgame/230802/azul"
-  rules: "https://www.nextmovegames.com/en/content/6-rules"
+  rules: "rules-en.pdf"
   tutorial: "https://www.youtube.com/watch?v=csJL-78NEPQ"
 assetsPath: "game_files/azul/"
 ---
@@ -45,9 +45,5 @@ Azul is an abstract tile-drafting game inspired by Portuguese azulejo tiles. Pla
 
 ## Files
 
-- [Scoring Reference](game_files/azul/scoring-reference.pdf) — wall bonus scoring diagram and row/column/colour bonuses
-- [Player Aid](game_files/azul/player-aid.pdf) — turn summary and end-game scoring
-
-## Video Tutorial
-
-[![Azul Tutorial](https://img.youtube.com/vi/csJL-78NEPQ/0.jpg)](https://www.youtube.com/watch?v=csJL-78NEPQ)
+- [Cheatsheet](cheat-sheet.pdf) — quick reference to rules
+- [Random Tile Wall Generator](https://azul.dropd.com/) — generate random wall layout

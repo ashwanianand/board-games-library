@@ -15,8 +15,8 @@ tags:
   - family
 links:
   bgg: "https://boardgamegeek.com/boardgame/295947/cascadia"
-  rules: "https://www.alderac.com/cascadia-rules/"
-  tutorial: "https://www.youtube.com/watch?v=x4bGOBRFSL8"
+  rules: "rules-en.pdf"
+  tutorial: "https://www.youtube.com/watch?v=6gBqUn9f1CU"
 assetsPath: "game_files/cascadia/"
 ---
 
@@ -24,30 +24,40 @@ assetsPath: "game_files/cascadia/"
 
 Cascadia is a tile-drafting and wildlife-placement game set in the Pacific Northwest. Players build a personal nature landscape by placing habitat tiles and pairing them with wildlife tokens. Each wildlife type (hawks, elk, salmon, foxes, bears) scores differently based on the scoring cards chosen at game start.
 
-## Teaching Tips
+## Game Setup
 
-- Show the five wildlife scoring cards at setup so players know which patterns they're aiming for early.
-- Remind players that each tile has two habitat types and a limited set of accepted wildlife symbols — misplacing wildlife is a common mistake.
-- The nature token (pine cone) is powerful: explain it early so beginners don't forget to use it.
-- Solo mode uses the same rules with a target score — great for practice runs.
+| Players | Terrain Tiles | Left in Box | Animals Each |
+|---------|--------------|-------------|--------------|
+| 2 | 43 | 42 | 10 |
+| 3 | 63 | 22 | 15 |
+| 4 | 83 | 2 | 20 |
 
-## House Rules
+## Player Turn
 
-- **Family scoring cards**: Use the "A" scoring cards (simpler patterns) for first games with younger players.
-- **Overfill rule**: If you can't legally place a wildlife token, it's discarded — some groups house-rule that it's returned to the supply instead.
+- If all four animals are the same, replace them all.
+- If three animals are the same, optionally replace them, once per turn.
+- Spend as many nature tokens as you wish.
+- Spend a nature token to replace any number of animals.
+- Spend a nature token to take any terrain with any animal.
+- Otherwise, take a set of terrain - animal.
+- Place the terrain anywhere in your environment.
+- Place the animal on any matching terrain.
+- Gain a nature token for placing an animal on a single-animal tile.
 
-## Setup Notes
+## End Game Scoring
 
-- Randomly select one scoring card per wildlife type before the game begins.
-- Lay out the starting habitat tile (starter tile) in front of each player.
-- Place 3 visible tile-wildlife pairs in the central display; refill after each pick.
-- The bag holds all habitat tiles; shake well before drawing.
+- Score points for animal cards
+- 1 pt per tile in the largest contiguous group of each terrain type
+- Majority scoring - largest habitat per terrain type
+  - 2 players – 2 pts for largest, 1 pt each for ties
+  - 3 - 4 players
+    - 3 pts for largest, 1 pt for second place
+    - 2 pts each if 2 players tie for largest, 0 pts for second place
+    - 1 pt each if 3-4 players tie for largest, 0 pts for second place
+    - 0 pts for ties for second place
+- 1 pt per nature token
+- Tie breaker – most nature tokens
 
 ## Files
 
-- [Scoring Card Reference](game_files/cascadia/scoring-reference.pdf) — all wildlife scoring patterns on one sheet
-- [Player Aid](game_files/cascadia/player-aid.pdf) — turn summary and scoring overview
-
-## Video Tutorial
-
-[![Cascadia Tutorial](https://img.youtube.com/vi/x4bGOBRFSL8/0.jpg)](https://www.youtube.com/watch?v=x4bGOBRFSL8)
+- [Quick Reference](reference-sheet.pdf) — reference card with score sheet and all wildlife scoring patterns 
