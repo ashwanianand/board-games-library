@@ -24,12 +24,6 @@ assetsPath: "game_files/azul/"
 
 Azul is an abstract tile-drafting game inspired by Portuguese azulejo tiles. Players take turns drafting coloured tiles from factory displays and placing them on their personal player boards. Points are scored for how tiles are placed, and penalty points are lost for tiles that can't be placed.
 
-## Teaching Tips
-
-- Explain the penalty row (floor line) prominently — new players often forget that leftover tiles become negative points.
-- Show that each row of the wall can only hold **one** of each colour; drafting a colour you've already placed in a row wastes tiles.
-- The game ends at the end of the round in which any player **completes a horizontal row** — point this out so players plan their final rounds accordingly.
-- Azul is easy to learn but deeply strategic; experienced players will often block colour supplies intentionally.
 
 ## House Rules
 
